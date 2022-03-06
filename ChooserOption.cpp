@@ -1,6 +1,7 @@
-// Class that defines the derived class: Chooser Option
+// Implementing the class that is defined in the header file: ChooserOption.hpp
 //
 // (c) Sudhansh Dua
+
 
 
 #include "ChooserOption.hpp"
