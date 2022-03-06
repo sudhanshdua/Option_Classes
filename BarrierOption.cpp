@@ -50,7 +50,7 @@ double BarrierOption::UpAndInPutBarrier() const
 }
 
 
-void BarrierOption::init()					// Initialising all the default values
+void BarrierOption::init()		// Initialising all the default values
 {
 	//	Default values
 	T = 1;
@@ -60,10 +60,10 @@ void BarrierOption::init()					// Initialising all the default values
 	sig = 0.25;
 	K = 100;
 	S = 100;			//	Default stock price 
-	b = r;				//	Black - Scholes(1973) stock option model : b = r
+	b = r;				//	Black - Scholes(1973) stock option model: b = r (i.e. non-dividend paying stock)
 
-	type = "C";			//	Call option as the default
-	InOrOut = "In";		//	In Barrier as the default
+	type = "C";			//	Call option as default
+	InOrOut = "In";			//	In Barrier as default
 }
 
 void BarrierOption::copy(const BarrierOption& option)
@@ -116,9 +116,9 @@ BarrierOption& BarrierOption::operator = (const BarrierOption& option)
 double BarrierOption::Price() const
 {
 	if (S >= H)
-	{									// Down Barrier
+	{ 							// Down Barrier
 
-		if (InOrOut == "In")					// Down and in barrier
+		if (InOrOut == "In")						// Down and in barrier
 		{ 
 
 			if (type == "C")
@@ -131,7 +131,7 @@ double BarrierOption::Price() const
 			}
 		}
 		else
-		{										// Down and out barrier
+		{								// Down and out barrier
 			if (type == "C")
 			{												// Down and out call barrier
 				return DownAndOutCallBarrier();
@@ -144,10 +144,10 @@ double BarrierOption::Price() const
 	}
 
 	else
-	{									// Up Barrier
+	{							// Up Barrier
 
 		if (InOrOut == "In")
-		{										// Up and in barrier
+		{								// Up and in barrier
 
 			if (type == "C")
 			{												// Up and in call barrier
@@ -159,7 +159,7 @@ double BarrierOption::Price() const
 			}
 		}
 		else
-		{										// Up and out barrier
+		{								// Up and out barrier
 			if (type == "C")
 			{												// Up and out call barrier
 				return UpAndOutCallBarrier();
@@ -174,13 +174,14 @@ double BarrierOption::Price() const
 
 
 // Modifier functions
-void BarrierOption::toggle()								//	Change the option type
+void BarrierOption::toggle()				//	Change the option type
 {
 	type = ((type == "C") ? "P" : "C");
 }
 
-// Global Functions
 
+
+// Global Functions
 
 double DownAndOutCallBarrier(const double S, const double H, const double K, const double cr, const double T, const double r, const double sig, const double b, const string type, const string InOrOut)
 {
@@ -393,6 +394,8 @@ double UpAndInCallBarrier(const double S, const double H, const double K, const 
 		return B - C + D + E;
 
 }
+
+
 double UpAndInPutBarrier(const double S, const double H, const double K, const double cr, const double T, const double r, const double sig, const double b, const string type, const string InOrOut)
 {
 	double ita = -1;
