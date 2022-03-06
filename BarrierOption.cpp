@@ -1,6 +1,6 @@
-//	Objective: To implement the option class that is defined in the header file: PerpetualAmericanOption.hpp
+// Class that defines the derived class: Barrier Option
 //
-//	(c) Sudhansh Dua
+// (c) Sudhansh Dua
 
 
 #include "BarrierOption.hpp"
