@@ -1,2 +1,4 @@
 # Options
-Option Pricing Library
+Option pricing library in C++
+
+(includes Exotic options)
