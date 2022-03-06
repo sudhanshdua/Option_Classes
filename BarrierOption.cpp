@@ -1,6 +1,7 @@
-// Class that defines the derived class: Barrier Option
+// Implementing the class that is defined in the header file: BarrierOption.hpp
 //
 // (c) Sudhansh Dua
+
 
 
 #include "BarrierOption.hpp"
