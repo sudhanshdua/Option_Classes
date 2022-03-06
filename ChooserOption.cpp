@@ -1,13 +1,16 @@
 //	Objective: To implement the option class that is defined in the header file: ChooserOption.hpp
+//
+//	(c) Sudhansh Dua
+
 
 #include "ChooserOption.hpp"
 #include <string>
 #include <boost/math/distributions.hpp>
 #include <cmath>
 
+
 using namespace std;
 using namespace boost::math;
-
 
 
 //	Gaussian functions using boost libraries
@@ -16,7 +19,6 @@ double ChooserOption::N(double x) const
 	normal_distribution<> Standard_normal(0.0, 1.0);
 	return cdf(Standard_normal, x);
 }
-
 
 double ChooserOption::n(double x) const
 {
@@ -31,7 +33,8 @@ double ChooserOption::ChooserPrice() const
 }
 
 
-void ChooserOption::init()					// Initialising all the default values
+// Initialising all the default values
+void ChooserOption::init()					
 {
 	//	Default values
 	r = 0.03;
@@ -44,6 +47,7 @@ void ChooserOption::init()					// Initialising all the default values
 
 }
 
+
 void ChooserOption::copy(const ChooserOption& option)
 {
 	r = option.r;
@@ -54,6 +58,7 @@ void ChooserOption::copy(const ChooserOption& option)
 	b = option.b;
 	S = option.S;
 }
+
 
 //	Constructors and destructor
 //	Default Constructor
@@ -75,6 +80,7 @@ ChooserOption::ChooserOption(const double& S1, const double& K1, const double& T
 //	Destructor
 ChooserOption::~ChooserOption() {}
 
+
 //	Assignment Operator
 ChooserOption& ChooserOption::operator = (const ChooserOption& option)
 {
@@ -87,14 +93,14 @@ ChooserOption& ChooserOption::operator = (const ChooserOption& option)
 	return *this;
 }
 
-// Functions that calculate the option price
+
+// Member function that calculate the option price
 double ChooserOption::Price() const
 {
 	return ChooserPrice();
 }
 
-
-
+// Global function
 double ChooserPrice(const double S, const double K, const double T, const double t, const double r, const double sig, const double b)
 {
 
@@ -110,3 +116,4 @@ double ChooserPrice(const double S, const double K, const double T, const double
 	return w;
 
 }
+
