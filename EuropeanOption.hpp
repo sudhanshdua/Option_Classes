@@ -1,14 +1,16 @@
+// 
 //
-//
-//
+// (c) Sudhansh Dua
 
 
 #ifndef EuropeanOption_HPP
 #define EuropeanOption_HPP
 
+
 #include "Option.hpp"
 #include <iostream>
 using namespace std;
+
 
 class EuropeanOption: public Option
 {
@@ -17,20 +19,20 @@ private:
 	void copy(const EuropeanOption& option);
 
 	// 'Kernel' functions for option calculations
-	double CallPrice() const;						//	Call option price
-	double PutPrice() const;						//	Put option price
-	double CallDelta() const;						//	Call option delta
-	double PutDelta() const;						//	Put	option delta
-	double CallGamma() const;						//	Call option gamma
-	double PutGamma() const;						//	Put option gamma
-	double CallVega() const;						//	Call option vega
-	double PutVega() const;							//	Put option vega
-	double CallTheta() const;						//	Call option theta
-	double PutTheta() const;						//	Put option theta
-	double CallRho() const;							//	Call option rho
-	double PutRho() const;							//	Put option rho
-	double CallCoc() const;							//	Call cost of carry
-	double PutCoc() const;							//	Put cost of carry	
+	double CallPrice() const;				//	Call option price
+	double PutPrice() const;				//	Put option price
+	double CallDelta() const;				//	Call option delta
+	double PutDelta() const;				//	Put option delta
+	double CallGamma() const;				//	Call option gamma
+	double PutGamma() const;				//	Put option gamma
+	double CallVega() const;				//	Call option vega
+	double PutVega() const;					//	Put option vega
+	double CallTheta() const;				//	Call option theta
+	double PutTheta() const;				//	Put option theta
+	double CallRho() const;					//	Call option rho
+	double PutRho() const;					//	Put option rho
+	double CallCoc() const;					//	Call cost of carry
+	double PutCoc() const;					//	Put cost of carry	
 
 
 	// Gaussian functions
@@ -45,14 +47,14 @@ public:
 	double r;			//	risk-free interest rate
 	double sig;			//	Volatility
 	double b;			//	Cost of carry
-	string type;		//	"C" - call option, "P" - put option
+	string type;			//	"C" - call option, "P" - put option
 
 	//	Constructors and destructor
-	EuropeanOption();												//	default constructor
-	EuropeanOption(const EuropeanOption& option);							//	copy constructor
+	EuropeanOption();							//	default constructor
+	EuropeanOption(const EuropeanOption& option);				//	copy constructor
 	EuropeanOption(const double& S1, const double& K1, const double& T1, const double& r1,
 		const double& sig1, const double& b1, const string type1);	//	constructor that accepts values
-	virtual ~EuropeanOption();										// destructor
+	virtual ~EuropeanOption();						// destructor
 
 
 	//	Assignment operator
