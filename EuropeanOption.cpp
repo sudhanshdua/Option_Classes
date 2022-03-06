@@ -1,6 +1,6 @@
-//	Implementing the class Option that is defined in the header file: Option.hpp
+// Implementing the class Option that is defined in the header file: Option.hpp
 //
-//	(c) Sudhansh Dua
+// (c) Sudhansh Dua
 
 
 #include "EuropeanOption.hpp"
