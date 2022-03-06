@@ -1,4 +1,4 @@
-// Class that represents solutions to Simple Chooser options
+// Class that defines the derived class: Chooser Option
 //
 // (c) Sudhansh Dua
 
