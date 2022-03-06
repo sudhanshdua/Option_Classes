@@ -1,4 +1,4 @@
-// 
+// Class that represents solutions to European options
 //
 // (c) Sudhansh Dua
 
