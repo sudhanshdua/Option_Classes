@@ -1,6 +1,6 @@
-//	Objective: To implement the option class that is defined in the header file: ChooserOption.hpp
+// Class that defines the derived class: Chooser Option
 //
-//	(c) Sudhansh Dua
+// (c) Sudhansh Dua
 
 
 #include "ChooserOption.hpp"
@@ -100,7 +100,8 @@ double ChooserOption::Price() const
 	return ChooserPrice();
 }
 
-// Global function
+
+// Global functions
 double ChooserPrice(const double S, const double K, const double T, const double t, const double r, const double sig, const double b)
 {
 
