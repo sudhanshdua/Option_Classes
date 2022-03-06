@@ -1,4 +1,4 @@
-// Class that represents solutions to European options
+// Class that defines the derived class: European Option
 //
 // (c) Sudhansh Dua
 
