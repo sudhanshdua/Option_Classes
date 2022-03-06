@@ -1,4 +1,7 @@
-//	Class that represents solutions to Simple Chooser options
+// Class that represents solutions to Simple Chooser options
+//
+// (c) Sudhansh Dua
+
 
 #ifndef ChooserOption_HPP
 #define ChooserOption_HPP
@@ -8,24 +11,25 @@
 #include <iostream>
 using namespace std;
 
+
 class ChooserOption : public Option
 {
 private:
 	// 'Kernel' functions for option calculations
 	double ChooserPrice() const;			//	Price of the option
-	void init();					// Initialise all default values
+	void init();					// 	Initialise all default values
 	void copy(const ChooserOption& option);		//	copies all values
 
 
 	// Gaussian functions
-	double n(double x) const;		//	Normal Probability Density function
-	double N(double x) const;		//	Cumulative Probability Density function
+	double n(double x) const;			//	Normal Probability Density function
+	double N(double x) const;			//	Cumulative Probability Density function
 
 
 public:
 	//	Member data
 	double t;			//	time that has passed since t = 0
-	double T;			//  time to maturity
+	double T;			//  	time to maturity
 	double r;			//	risk-free interest rate
 	double sig;			//	Volatility
 	double K;			//	Strike Price
@@ -35,11 +39,11 @@ public:
 
 
 	//	Constructors and the destructor
-	ChooserOption();								//	default constructor
+	ChooserOption();					//	default constructor
 	ChooserOption(const ChooserOption& option);		//	Copy constructor
 	ChooserOption(const double& S1, const double& K1, const double& T1, const double& t1, const double& r1,
-		const double& sig1, const double& b1);	//	constructor that accepts values
-	~ChooserOption();								//	destructor
+		const double& sig1, const double& b1);		//	constructor that accepts values
+	~ChooserOption();					//	destructor
 
 	//	Assignment operator
 	ChooserOption& operator = (const ChooserOption& option);
@@ -50,7 +54,6 @@ public:
 };
 
 //	Global Functions
-
 double ChooserPrice(const double S, const double K, const double T, const double t, const double r, const double sig, const double b);
 
 #endif
