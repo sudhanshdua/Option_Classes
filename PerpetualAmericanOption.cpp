@@ -1,5 +1,6 @@
-//	Objective: To implement the option class that is defined in the header file: PerpetualAmericanOption.hpp
-
+// Implementing the option class that is defined in the header file: PerpetualAmericanOption.hpp
+//
+// (c) Sudhansh Dua
 #include "PerpetualAmericanOption.hpp"
 #include <string>
 #include <boost/math/distributions.hpp>
