@@ -1,9 +1,13 @@
 //	Objective: To implement the option class that is defined in the header file: PerpetualAmericanOption.hpp
+//
+//	(c) Sudhansh Dua
+
 
 #include "BarrierOption.hpp"
 #include <string>
 #include <boost/math/distributions.hpp>
 #include <cmath>
+
 
 using namespace std;
 using namespace boost::math;
@@ -80,6 +84,7 @@ void BarrierOption::copy(const BarrierOption& option)
 	S = option.S;
 }
 
+
 //	Constructors and destructor
 //	Default Constructor
 BarrierOption::BarrierOption() : Option()
@@ -100,6 +105,7 @@ BarrierOption::BarrierOption(const double& S1, const double& H1, const double& K
 //	Destructor
 BarrierOption::~BarrierOption() {}
 
+
 //	Assignment Operator
 BarrierOption& BarrierOption::operator = (const BarrierOption& option)
 {
@@ -111,6 +117,7 @@ BarrierOption& BarrierOption::operator = (const BarrierOption& option)
 	copy(option);
 	return *this;
 }
+
 
 // Functions that calculate the option price
 double BarrierOption::Price() const
@@ -174,11 +181,10 @@ double BarrierOption::Price() const
 
 
 // Modifier functions
-void BarrierOption::toggle()				//	Change the option type
+void BarrierOption::toggle()			//	Change the option type
 {
 	type = ((type == "C") ? "P" : "C");
 }
-
 
 
 // Global Functions
