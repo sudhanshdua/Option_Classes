@@ -1,4 +1,4 @@
-// Implementing the class Option that is defined in the header file: Option.hpp
+// Implementing the class that is defined in the header file: Option.hpp
 //
 // (c) Sudhansh Dua
 
