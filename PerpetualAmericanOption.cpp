@@ -5,8 +5,11 @@
 #include <boost/math/distributions.hpp>
 #include <cmath>
 #include <vector>
+
+
 using namespace std;
 using namespace boost::math;
+
 
 double PerpetualAmericanOption::CallPrice() const
 {
@@ -18,16 +21,16 @@ double PerpetualAmericanOption::PutPrice() const
 	return ::PerpetualPut(S, K, r, sig, b);
 }
 
-void PerpetualAmericanOption::init()					// Initialising all the default values
+void PerpetualAmericanOption::init()		// Initialising all the default values
 {
 	//	Default values
 	r = 0.03;
 	sig = 0.2;
 	K = 105;
-	S = 100;			//	Default stock price 
-	b = r;				//	Black - Scholes(1973) stock option model : b = r
+	S = 100;				//	Default stock price 
+	b = r;					//	Black - Scholes(1973) stock option model : b = r
 
-	type = "C";			//	Call option as the default
+	type = "C";				//	Call option as the default
 }
 
 void PerpetualAmericanOption::copy(const PerpetualAmericanOption& option)
@@ -39,12 +42,13 @@ void PerpetualAmericanOption::copy(const PerpetualAmericanOption& option)
 	type = option.type;
 	S = option.S;
 }
+
+
 //	Constructors and destructor
 //	Default Constructor
 PerpetualAmericanOption::PerpetualAmericanOption()
 {
 	init();
-
 }
 
 //	Copy constructor
@@ -60,6 +64,7 @@ PerpetualAmericanOption::PerpetualAmericanOption(const double& S1, const double&
 //	Destructor
 PerpetualAmericanOption::~PerpetualAmericanOption() {}
 
+
 //	Assignment Operator
 PerpetualAmericanOption& PerpetualAmericanOption::operator = (const PerpetualAmericanOption& option)
 {
@@ -71,6 +76,7 @@ PerpetualAmericanOption& PerpetualAmericanOption::operator = (const PerpetualAme
 	copy(option);
 	return *this;
 }
+
 
 // Functions that calculate the option price
 double PerpetualAmericanOption::Price() const
@@ -92,7 +98,7 @@ void PerpetualAmericanOption::toggle()				//	Change the option type
 	type = ((type == "C") ? "P" : "C");
 }
 
-
+// Global functions
 double PerpetualCall(const double S, const double K, const double r, const double sig, const double b)
 {
 	double y1 = 0.5 - (b / (sig * sig)) + sqrt(pow(((b / (sig * sig)) - 0.5), 2) + (2 * r / (sig * sig)));
@@ -106,6 +112,7 @@ double PerpetualCall(const double S, const double K, const double r, const doubl
 	return C;
 }
 
+
 double PerpetualPut(const double S, const double K, const double r, const double sig, const double b)
 {
 	double y2 = 0.5 - (b / (sig * sig)) - sqrt(pow(((b / (sig * sig)) - 0.5), 2) + (2 * r / (sig * sig)));
@@ -118,3 +125,4 @@ double PerpetualPut(const double S, const double K, const double r, const double
 
 	return P;
 }
+
