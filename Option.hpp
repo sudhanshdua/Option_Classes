@@ -1,4 +1,4 @@
-// Class that contains the solutions to price Exotic Options
+// Class that contains the defines the base class: Options
 //
 // (c) Sudhansh Dua
 
@@ -6,8 +6,10 @@
 #ifndef Option_HPP
 #define Option_HPP
 
+
 #include <iostream>
 using namespace std;
+
 
 class Option
 {
@@ -62,5 +64,4 @@ double PutPrice(const double S, const double K, const double T, const double r, 
 
 
 #endif
-
 
