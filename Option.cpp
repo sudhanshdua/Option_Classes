@@ -2,9 +2,11 @@
 //
 //	(c) Sudhansh Dua
 
+
 #include "Option.hpp"
 #include <cmath>
 #include <boost/math/distributions.hpp>
+
 
 using namespace std;
 using namespace boost::math;
@@ -60,13 +62,14 @@ void Option::copy(const Option& option)
 	type = option.type;
 }
 
+
 //	Constructors and destructor
-Option::Option()												//	Default constructor
+Option::Option()						//	Default constructor
 {
 	init();
 }
 
-Option::Option(const Option& option)							//	Copy constructor
+Option::Option(const Option& option)				//	Copy constructor
 {
 	copy(option);
 }
@@ -75,7 +78,7 @@ Option::Option(const Option& option)							//	Copy constructor
 Option::Option(const double& S1, const double& K1, const double& T1, const double& r1,
 	const double& sig1, const double& b1, const string type1) : S(S1), K(K1), T(T1), r(r1), sig(sig1), b(b1), type(type1) {}
 
-Option::~Option() {}											//	Destructor
+Option::~Option() {}						//	Destructor
 
 
 //	Assignment operator
