@@ -1,4 +1,4 @@
-// Class that contains the defines the base class: Options
+// Class that defines the base class: Options
 //
 // (c) Sudhansh Dua
 
