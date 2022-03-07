@@ -57,7 +57,7 @@ CashOrNothingOption::CashOrNothingOption() : Option()
 }
 
 //	Copy constructor
-CashOrNothingOption::CashOrNothingOption(const CashOrNothingOption& option) : Option()
+CashOrNothingOption::CashOrNothingOption(const CashOrNothingOption& option) : Option(option)
 {
 	copy(option);
 }
