@@ -1,6 +1,14 @@
 //	Class that represents solutions to Barrier options
 //
 //	(c) Sudhansh Dua
+//
+//
+//	The In options are paid for today but first come into existence if the asset price S hits the barrier H before expiration. 
+//	It is possible to include a prespecified cash rebate CR, which is paid out at option expiration if the option has not been knocked in during its lifetime.
+//
+//	The Out Barrier options are similar to standard options except that the option becomes worthless if the asset price S hits the barrier before expiration. 
+//    	It is possible to include a prespecified cash rebate CR, which is paid out if the option is knocked out before expiration.
+    
 
 
 #ifndef BarrierOption_HPP
