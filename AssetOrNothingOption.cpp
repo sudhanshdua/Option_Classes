@@ -55,7 +55,7 @@ AssetOrNothingOption::AssetOrNothingOption() : Option()
 }
 
 //	Copy constructor
-AssetOrNothingOption::AssetOrNothingOption(const AssetOrNothingOption& option) : Option()
+AssetOrNothingOption::AssetOrNothingOption(const AssetOrNothingOption& option) : Option(option)
 {
 	copy(option);
 }
