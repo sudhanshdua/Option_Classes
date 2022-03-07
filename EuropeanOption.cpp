@@ -124,7 +124,7 @@ void EuropeanOption::copy(const EuropeanOption& option)
 }
 
 //	Constructors and destructor
-EuropeanOption::EuropeanOption() : Option()											//	Default constructor
+EuropeanOption::EuropeanOption() : Option()						//	Default constructor
 {
 	init();
 }
@@ -138,7 +138,7 @@ EuropeanOption::EuropeanOption(const EuropeanOption& option) : Option(option)		/
 EuropeanOption::EuropeanOption(const double& S1, const double& K1, const double& T1, const double& r1,
 	const double& sig1, const double& b1, const string type1) : Option(), S(S1), K(K1), T(T1), r(r1), sig(sig1), b(b1), type(type1) {}
 
-EuropeanOption::~EuropeanOption() {}											//	Destructor
+EuropeanOption::~EuropeanOption() {}							//	Destructor
 
 
 //	Assignment operator
