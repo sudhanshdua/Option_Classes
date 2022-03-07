@@ -1,6 +1,9 @@
 // Class that defines the derived class: Chooser Option
 //
 // (c) Sudhansh Dua
+//
+// A simple chooser option gives the holder the right to choose whether the option is to be a standard call or put after a time t, 
+// with strike K and time to maturity T.
 
 
 #ifndef ChooserOption_HPP
