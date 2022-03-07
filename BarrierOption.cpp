@@ -94,7 +94,7 @@ BarrierOption::BarrierOption() : Option()
 }
 
 //	Copy constructor
-BarrierOption::BarrierOption(const BarrierOption& option) : Option()
+BarrierOption::BarrierOption(const BarrierOption& option) : Option(option)
 {
 	copy(option);
 }
