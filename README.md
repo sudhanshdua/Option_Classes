@@ -1,4 +1,4 @@
 # Options
 Option pricing library in C++
 
-(includes Exotic options)
+(includes options with close-form solutions)
