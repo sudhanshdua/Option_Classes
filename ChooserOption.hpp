@@ -30,7 +30,7 @@ private:
 
 
 public:
-	//	Member data
+	// Member data
 	double t;			//	time that has passed since t = 0
 	double T;			//  	time to maturity
 	double r;			//	risk-free interest rate
@@ -41,14 +41,14 @@ public:
 	
 
 
-	//	Constructors and the destructor
+	// Constructors and the destructor
 	ChooserOption();					//	default constructor
 	ChooserOption(const ChooserOption& option);		//	Copy constructor
 	ChooserOption(const double& S1, const double& K1, const double& T1, const double& t1, const double& r1,
 		const double& sig1, const double& b1);		//	constructor that accepts values
 	~ChooserOption();					//	destructor
 
-	//	Assignment operator
+	// Assignment operator
 	ChooserOption& operator = (const ChooserOption& option);
 
 	// Functions that calculate the option price
@@ -56,7 +56,7 @@ public:
 
 };
 
-//	Global Functions
+// Global Functions
 double ChooserPrice(const double S, const double K, const double T, const double t, const double r, const double sig, const double b);
 
 #endif
