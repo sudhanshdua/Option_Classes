@@ -49,20 +49,20 @@ void PerpetualAmericanOption::copy(const PerpetualAmericanOption& option)
 
 //	Constructors and destructor
 //	Default Constructor
-PerpetualAmericanOption::PerpetualAmericanOption()
+PerpetualAmericanOption::PerpetualAmericanOption() : Option()
 {
 	init();
 }
 
 //	Copy constructor
-PerpetualAmericanOption::PerpetualAmericanOption(const PerpetualAmericanOption& option)
+PerpetualAmericanOption::PerpetualAmericanOption(const PerpetualAmericanOption& option) : Option(option)
 {
 	copy(option);
 }
 
 //	Constructor that accepts values
 PerpetualAmericanOption::PerpetualAmericanOption(const double& S1, const double& K1, const double& r1,
-	const double& sig1, const double& b1, const string type1) : S(S1), K(K1), r(r1), sig(sig1), b(b1), type(type1) {}
+	const double& sig1, const double& b1, const string type1) : Option(), S(S1), K(K1), r(r1), sig(sig1), b(b1), type(type1) {}
 
 //	Destructor
 PerpetualAmericanOption::~PerpetualAmericanOption() {}
