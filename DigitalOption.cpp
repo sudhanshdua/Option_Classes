@@ -55,7 +55,7 @@ DigitalOption::DigitalOption() : Option()
 }
 
 //	Copy constructor
-DigitalOption::DigitalOption(const DigitalOption& option) : Option()
+DigitalOption::DigitalOption(const DigitalOption& option) : Option(option)
 {
 	copy(option);
 }
