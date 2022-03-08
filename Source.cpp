@@ -14,7 +14,9 @@
 #include "AssetOrNothingOption.hpp"
 #include "CashOrNothingOption.hpp"
 #include "AsianGeometricOption.hpp"
+#include "GapOption.hpp"
 
+// In-built Header files
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -185,5 +187,88 @@ int main()
 	cout << "Perpetual American Call option price: \t" << setprecision(10) << price_16 << endl;		// 18.50349988
 	cout << "Perpetual American Put option price: \t" << setprecision(10) << price_17 << endl;		// 3.031060383
 	cout << "\n";
+	
+	
+	////////////////////////////////		European Futures Option		/////////////////////////////////
+	// 
+	// Pricing of European options when the underlying security is a forward or futures contract with initial
+	// 
+	// European Futures Option parameters
+	double S_9 = 100.0;
+	double K_9 = 95.0;
+	double T_9 = 0.5;
+	double r_9 = 0.1;
+	double sig_9 = 0.2;
+	//	The cost-of-carry parameter b = 0 for the Black(1976) futures option model
+	//	because,
+	//	the risk-free rate (discounting) = risk-free rate (used for calculating the forward/futures price)
+	double b_9 = 0.0;
+
+	EuropeanOption option_18(S_9, K_9, T_9, r_9, sig_9, b_9, "P");
+	
+	double price_18 = option_18.Price();
+
+	cout << "European Futures Put option price: \t" << setprecision(10) << price_18 << endl;	// 3.189643695
+	cout << "\n";
+
+
+	////////////////////////////	Options on Stock Indices		///////////////////////////////
+	// Parameters
+	double S_10 = 100.0;
+	double K_10 = 95.0;
+	double T_10 = 0.5;
+	double r_10 = 0.1;
+	double sig_10 = 0.2;
+	double q = 0.05;			//	Continuous dividend yield
+	double b_10 = r_10 - q;		//	b = r - q Merton (1973) stock option model with continuous dividend yield
+
+	EuropeanOption option_19(S_10, K_10, T_10, r_10, sig_10, b_10, "P");
+
+	double price_19 = option_19.Price();
+
+	cout << "Price of the option on a stock index: \t" << setprecision(10) << price_19 << endl;		// 2.464787647
+	cout << "\n";
+	
+
+
+	////////////////////////////		European FX options			///////////////////////////////
+	// USD-call/EUR-put option			
+	// 
+	// Option parameters
+	double S_11 = 1.56;				//	current USD/EUR exchange rate
+	double K_11 = 1.6;
+	double r_11 = 0.08;				//	domestic risk-free interest rate (in EUR)
+	double rfr = 0.06;				//	foreign risk-free rate (in USD)
+	double T_11 = 0.5;
+	double sig_11 = 0.12;
+	double b_11 = r_11 - rfr;		//	b = r - rfr Garman and Kohlhagen (1983) currency option model, where rfr = 'foreign' interest rate
+	string type = "C";				//	Call on USD, the foreign risk-free rate
+
+	EuropeanOption option_20(S_11, K_11, T_11, r_11, sig_11, b_11, type);
+
+	double price_20 = option_20.Price();
+
+	cout << "FX option premium (in USD/EUR): \t" << setprecision(10) << price_20 << endl;	// 0.04078	
+	cout << "\n";
+	
+
+	////////////////////////////		Gap Option		///////////////////////////////
+	// Gap Option parameters
+	double S_12 = 50.0;
+	double K1_12 = 50.0;
+	double K2_12 = 57.0;
+	double T_12 = 0.5;
+	double r_12 = 0.09;
+	double sig_12 = 0.2;
+	double b_12 = r_12;			//	constant dividend yield = risk-free rate
+
+	GapOption option_21(S_12, K1_12, K2_12, T_12, r_12, sig_12, b_12, "C");
+
+	double price_21 = option_21.Price();
+
+
+	cout << "Gap option price: \t" << setprecision(10) << price_21 << endl;		//  -0.00525
+	cout << "\n";
+
 
 }
