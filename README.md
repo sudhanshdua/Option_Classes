@@ -1,4 +1,4 @@
 # Options
-Option pricing library in C++
+Option classes in C++
 
-(includes options with close-form solutions)
+(includes only options with closed-form solutions)
