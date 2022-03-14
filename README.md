@@ -8,5 +8,6 @@ includes the following options with closed-form pricing solutions:
 - Barrier option
 - Asian (Geometric) option
 - Digital option
+- Cash or Nothing option
+- Asset or Nothing option
 - Gap option
-
